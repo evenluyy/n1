@@ -112,7 +112,7 @@ jobs:
         SW_FLOWOFFLOAD: 0
         SFE_FLOW: 0
         ENABLE_WIFI_K510: 0
-        OPENWRT_IP: 192.168.110.249
+        OPENWRT_IP: 192.168.110.249/24
 
     - name: Upload firmware to release
       uses: softprops/action-gh-release@master
