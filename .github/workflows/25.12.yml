@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
    
 env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.N1RE }}
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: openwrt-25.12
   TZ: Asia/Shanghai
@@ -87,7 +87,7 @@ jobs:
         SW_FLOWOFFLOAD: 0
         SFE_FLOW: 0
         ENABLE_WIFI_K510: 0
-        OPENWRT_IP: 192.168.110.249
+        OPENWRT_IP: 192.168.110.249/24
 
     - name: Upload firmware to release
       # 使用推荐的 upload-to-releases，简化上传和版本管理
@@ -98,7 +98,7 @@ jobs:
         allow_updates: true
         replaces_artifacts: true
         make_latest: true
-        gh_token: ${{ secrets.GITHUB_TOKEN }}
+        gh_token: ${{ secrets.N1RE }}
         body: |
           首次使用建议全新刷写
           * 基本信息
