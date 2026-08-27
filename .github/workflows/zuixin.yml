@@ -80,7 +80,7 @@ jobs:
         KERNEL_REPO_URL: tiantuuy/test
         SAVE_OPENWRT_ROOTFS: true
         # 建议根据实际可用内核调整，这里保留用户原设定 6.18.y
-        KERNEL_VERSION_NAME: 6.18.y
+        KERNEL_VERSION_NAME: 6.18.y_6.12.y_6.1.y
         PACKAGE_SOC: s905d
         GZIP_IMGS: .gz
         WHOAMI: test
@@ -107,16 +107,12 @@ jobs:
           账户: root
           密码: password
 
-    - name: Delete old releases
-      uses: dev-drprasad/delete-older-releases@master
+    - name: Delete old
+      uses: ophub/delete-releases-workflows@main
       with:
-        keep_latest: 2
+        delete_releases: true
+        releases_keep_latest: 2
         delete_tags: true
-
-    - name: Delete old workflow runs
-      uses: Mattraks/delete-workflow-runs@v2.1.0
-      with:
-        token: ${{ github.token }}
-        repository: ${{ github.repository }}
-        retain_days: 1
-        keep_minimum_runs: 0
+        delete_workflows: true
+        workflows_keep_day: 0
+        gh_token: ${{ secrets.N1RE }}
