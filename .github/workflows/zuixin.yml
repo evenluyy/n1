@@ -71,7 +71,10 @@ jobs:
         make -j$(( $(nproc) + 1 )) || make -j1 V=s
 
     # 删除了原“Check and fix build artifacts”步骤，因为打包Action可直接使用通配符
-
+    - name: Set version
+      run: |
+        echo "OPENWRT_VER=R$(date +%Y.%m.%d)" >> $GITHUB_ENV
+        echo "DISTRIB_REVISION=R$(date +%Y.%m.%d)" >> $GITHUB_ENV
     - name: Package N1 firmware
       uses: unifreq/openwrt_packit@master
       env:
