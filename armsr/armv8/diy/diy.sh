@@ -30,5 +30,5 @@ git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages --depth=
 #rm -rf package/small-package/luci-app-passwall2
 #rm -rf package/small-package/luci-app-passwall
 #rm -rf feeds/packages/lang/golang
-git clone https://github.com/Zerogiven-OpenWRT-Packages/luci-app-podman --depth=1 package/podman
+git clone https://github.com/Zerogiven-OpenWRT-Packages/luci-app-podman --depth=1 package/luci-app-podman
 #git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
