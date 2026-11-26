@@ -108,7 +108,7 @@ jobs:
           openwrt-25.12分支
           IP: 192.168.110.249
           账户: root
-          密码: password
+          密码: 112211asAa.
 
     - name: Delete old
       uses: ophub/delete-releases-workflows@main
